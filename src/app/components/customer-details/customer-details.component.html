@@ -1,0 +1,67 @@
+<app-page-header [pageHeader]="pageHeader" [pageIcon]="pageIcon"></app-page-header>
+
+<div class="row">
+    <div class="col-12">
+      <form>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="firstName">First Name</label>
+            <input disabled [(ngModel)]="customer.firstName" 
+              class="form-control" 
+              type="text" 
+              name="firstName" 
+              id="firstName">
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="lastName">Last Name</label>
+            <input disabled
+              [(ngModel)]="customer.lastName" 
+              type="text" 
+              name="lastName" 
+              id="lastName" 
+              class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="email"><span class="text-danger">*</span> Email</label>
+            <input disabled
+              [(ngModel)]="customer.email" 
+              type="email" 
+              name="email" 
+              id="email" 
+              class="form-control">
+            </div>
+          <div class="col-md-4 mb-3">
+            <label for="phone"><span class="text-danger">*</span> Phone</label>
+            <input disabled
+              [(ngModel)]="customer.phone" 
+              type="phone" 
+              name="phone" 
+              id="phone" 
+              class="form-control">
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-md-8 mb-3">
+            <label for="address">Adress:</label>
+            <input class="form-control" type="text" name="address" id="address" [(ngModel)]="customer.address" disabled>
+          </div>
+        </div>
+  
+  
+        <div class="row">
+            <div class="col-md-8">
+              <label for="address">Notes:</label>
+              <textarea [(ngModel)]="customer.notes" class="form-control" name="notes" id="notes" rows="10" disabled></textarea>
+            </div>
+          </div>
+  
+  
+        <div class="fixed-bottom bg-light text-center p-3">
+          <a href="" routerLink="/customers" class="btn btn-secondary">Back</a>
+        </div>
+      </form>
+    </div>
+  </div>

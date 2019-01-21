@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-4 mt-5">
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" autocomplete="off" novalidate="novalidate">
+      <div class="text-center mb-4">
+        <h1 class="h3 mb-3 font-weight-normal">COMPANY <i class="fas fa-angle-double-up text-success"></i> CRM</h1>
+        <p>Login with your account</p>
+      </div>
+      <div class="form-group mb-4">
+        <input type="email" name="email" id="email" placeholder="Email" 
+        class="form-control"
+        #ef="ngModel" 
+        [(ngModel)]="email"
+        [ngClass]="{'is-invalid': ef.errors && ef.touched}"
+        required
+        email>
+        <div [hidden]="!ef.errors?.required" class="invalid-feedback">A valid email is required</div>
+        <div [hidden]="!ef.errors?.email" class="invalid-feedback">A valid email is required</div>
+      </div>
+      <div class="form-group mb-4">
+        <input type="password" name="password" id="password" placeholder="Password"
+        class="form-control"
+        #pf = "ngModel"
+        [(ngModel)]="password"
+        [ngClass]="{'is-invalid': pf.errors && pf.touched}"
+        required>
+        <div [hidden]="!pf.errors?.required" class="invalid-feedback">Password is required</div>
+      </div>
+      <button [disabled]="!loginForm.form.valid" type="submit" class="btn btn-primary btn-block">Sign In</button>
+    </form>
+  </div>
+</div>

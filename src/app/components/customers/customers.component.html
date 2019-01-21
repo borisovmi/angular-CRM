@@ -1,0 +1,54 @@
+<app-page-header [pageHeader]="pageHeader" [pageIcon]="pageIcon"></app-page-header>
+
+<div class="row">
+    <div class="col-6">
+        <label for="search-by-phone" class="sr-only">Search By Phone:</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <div class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></div>
+        </div>
+        <input (keyup)="onSearch('phone')" class="form-control" name="searchByPhone" [(ngModel)]="phone" id="search-by-phone" type="text" placeholder="Search By Phone">
+      </div>
+    </div>
+  <div class="col-6">
+    <span class="float-right">
+        <a href="" routerLink="/customer/new" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Add customer</a>
+    </span>
+  </div>
+  
+</div>
+
+<div class="row mt-3">
+  <div class="col-12">
+    <table *ngIf="customers.length > 0; else noCustomers" class="table table-bordered">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr (mouseenter)="showTools($event)" (mouseleave)="hideTools($event)" *ngFor="let customer of customers; let x = index">
+          <td>
+            {{ x+1 }}
+            <span class="ml-3 invisible">
+              <a class="text-secondary" href="" routerLink="/customer/{{ customer.id }}"><i class="fas fa-eye"></i></a>
+              <a class="text-secondary ml-3" href="" routerLink="/customer/{{ customer.id }}/edit"><i class="fas fa-pen"></i></a>
+              <a (click)="onDeleteCustomer(customer.id, $event)" class="text-secondary ml-3" href=""><i class="fas fa-trash-alt"></i></a>
+            </span>
+          </td>
+          <td>{{ customer.firstName }}</td>
+          <td>{{ customer.lastName }}</td>
+          <td>{{ customer.email }}</td>
+          <td>{{ customer.phone }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <ng-template #noCustomers>
+      <p><i>No customers in the list.</i></p>
+    </ng-template>
+  </div>
+</div>
