@@ -1,27 +1,21 @@
-# CompCrm
+## Company-CRM
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.2.
+https://company-crm-f466c.firebaseapp.com/
 
-## Development server
+A project for some "Company" CRM using Angular 7 and Firebase real time database, with secured sign in and CRUD operations.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+TECHNOLOGIES: HTML, CSS, BOOTSTRAP 4, JS ES6, TYPESCRIPT, ANGULAR, FIREBASE (FIRESTORE)
 
-## Code scaffolding
+### few notes ###
+1. CRM is supposed for inner usage only, so you cant see it without login
+2. Sample login details are:
+    username: shimi@gmail.com
+    password: 123456
+3. Please don't overdo with CRUD if you will decide to :)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## P.s.
+Any feedback on the project will be very helpful!
+michael.borisov10@gmail.com
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
