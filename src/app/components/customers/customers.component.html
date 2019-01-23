@@ -1,21 +1,21 @@
 <app-page-header [pageHeader]="pageHeader" [pageIcon]="pageIcon"></app-page-header>
 
 <div class="row">
-    <div class="col-6">
+    <div class="col-12 col-sm-6 mb-3">
+        <span class="float-left">
+            <a href="" routerLink="/customer/new" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Add customer</a>
+        </span>
+      </div> 
+    <div class="col-12 col-sm-6">
         <label for="search-by-phone" class="sr-only">Search By Phone:</label>
-        <div class="input-group mb-3">
+        <div class="input-group">
           <div class="input-group-prepend">
             <div class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></div>
         </div>
         <input (keyup)="onSearch('phone')" class="form-control" name="searchByPhone" [(ngModel)]="phone" id="search-by-phone" type="text" placeholder="Search By Phone">
       </div>
     </div>
-  <div class="col-6">
-    <span class="float-right">
-        <a href="" routerLink="/customer/new" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Add customer</a>
-    </span>
-  </div>
-  
+   
 </div>
 
 <div class="row mt-3">

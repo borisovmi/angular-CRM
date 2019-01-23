@@ -48,11 +48,17 @@ export class CustomersComponent implements OnInit {
     event.preventDefault();
     if(confirm('Are you sure?')) {
       this._customersService.deleteCustomer(customerId);
+      this._fms.show('Customer is deleted', {
+        cssClass: environment.fmsClass,
+        timeOut: 3000
+      });
+    } else {
+      this._fms.show('Customer is not deleted', {
+        cssClass: environment.fmsClass,
+        timeOut: 3000
+      });
     }
-    this._fms.show('Customer is deleted', {
-      cssClass: environment.fmsClass,
-      timeOut: 3000
-    });
+    
   }
 
   onSearch(field: string): void {
